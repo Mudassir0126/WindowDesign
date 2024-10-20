@@ -1,161 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Optimized Box</title>
     <style>
-        body {
-            margin: 0;
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: brown;
-        }
+      body {
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: brown;
+      }
 
-        .parent {
-            height: 260px;
-            width: 200px;
-            background-color: beige;
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
+      .parent {
+        height: 245px;
+        width: 245px;
+        background-color: beige;
+        position: relative;
+      }
 
-        .box {
-            margin: 0;
-            height: 200px;
-            width: 200px;
-            background-color: blue;
-            position: absolute;
-            bottom: 0;
-            border: 1px solid black;
-        }
+      .Frame {
+        margin: 0;
+        height: 200px;
+        width: 200px;
+        background-color: blue;
+        position: absolute;
+        bottom: 0;
+        border: 1px solid black;
+      }
 
-        .diagonal {
-            height: 1px;
-            width: 200px;
-            background-color: black;
-            position: absolute;
-        }
+      .Glass {
+        height: 180px;
+        width: 180px;
+        background-color: aqua;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        border: 1px solid black;
+      }
 
-        /* Diagonal lines */
-        .top-left {
-            top: 0;
-            left: 0;
-            transform: rotate(45deg);
-            transform-origin: top left;
-        }
+      .diagonal {
+        height: 1px;
+        width: 200px;
+        background-color: black;
+        position: absolute;
+      }
 
-        .bottom-left {
-            bottom: 0;
-            left: 0;
-            transform: rotate(-43deg);
-            transform-origin: bottom left;
-        }
+      /* Diagonal lines */
+      .top-left {
+        top: 0;
+        left: 0;
+        transform: rotate(45deg);
+        transform-origin: top left;
+      }
 
-        .top-right {
-            top: 0;
-            right: 0;
-            transform: rotate(-45deg);
-            transform-origin: top right;
-        }
+      .bottom-left {
+        bottom: 0;
+        left: 0;
+        transform: rotate(-43deg);
+        transform-origin: bottom left;
+      }
 
-        .bottom-right {
-            margin: 0;
-            bottom: 0;
-            right: 0;
-            transform: rotate(40deg);
-            transform-origin: bottom right;
-        }
+      .top-right {
+        top: 0;
+        right: 0;
+        transform: rotate(-45deg);
+        transform-origin: top right;
+      }
 
-        .box1 {
-            height: 180px;
-            width: 180px;
-            background-color: aqua;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            border: 1px solid black;
-        }
+      .bottom-right {
+        margin: 0;
+        bottom: 0;
+        right: 0;
+        transform: rotate(40deg);
+        transform-origin: bottom right;
+      }
 
-        /* Measurement lines */
-        .mline,
-        .mline2 {
-            position: absolute;
-            width: 1px;
-            height: 50px;
-            top: 10px;
-            background-color: black;
-        }
+      /* Measurement lines */
+      .mline,
+      .mline2 {
+        position: absolute;
+        width: 1.5px;
+        height: 30px;
+        top: 15px;
+        background-color: black;
+      }
 
-        .mline {
-            left: 0;
-        }
+      .mline {
+        left: 0;
+      }
 
-        .mline2 {
-            right: 0;
-        }
+      .mline2 {
+        right: 0px;
+      }
 
-        .mline3 {
-            position: absolute;
-            width: 180px;
-            height: 2px;
-            top: 18px;
-            right: 10px;
-            background-color: black;
-        }
+      .mline3 {
+        position: absolute;
+        width: 180px;
+        height: 1.5px;
+        top: 16.5px;
+        right: 10px;
+        background-color: black;
+      }
 
-        /* Measurement text */
-        .measurement {
-            margin: 0;
-            position: absolute;
-            top: 0;
-            text-align: center;
-        }
+      /* Measurement text */
+      .measurement {
+        margin: 0;
+        position: absolute;
+        top: 1px;
+        text-align: center;
+      }
 
-        /* Triangles */
-        .triangle {
-            width: 0;
-            height: 0;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            position: absolute;
-        }
+      /* Triangles */
+      .triangle {
+        width: 0;
+        height: 0;
+        border-top: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        position: absolute;
+      }
 
-        .tri1 {
-            border-right: 10px solid red;
-            left: 1px;
-            top: 10px;
-        }
+      .tri1 {
+        border-right: 10px solid red;
+        left: 1px;
+        top: 15px;
+      }
 
-        .tri2 {
-            border-left: 10px solid red;
-            right: 1px;
-            top: 10px;
-        }
+      .tri2 {
+        border-left: 10px solid red;
+        right: 1px;
+        top: 15px;
+      }
+      .mbox1 {
+        height: 45px;
+        width: 200px;
+        background-color: aliceblue;
+        position: relative;
+      }
+      .mbox2 {
+        width: 45px;
+        height: 200px;
+        background-color: aliceblue;
+        position: absolute;
+        right: 0;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="parent">
+      <div class="mbox1">
         <div class="triangle tri1"></div>
         <div class="triangle tri2"></div>
         <div class="mline"></div>
         <div class="mline2"></div>
         <div class="mline3"></div>
         <p class="measurement">hi</p>
-        <div class="box">
-            <div class="diagonal top-left"></div>
-            <div class="diagonal bottom-left"></div>
-            <div class="diagonal top-right"></div>
-            <div class="diagonal bottom-right"></div>
-            <div class="box1"></div>
-        </div>
-    </div>
-</body>
+      </div>
+      <div class="mbox2"></div>
 
+      <div class="Frame">
+        <div class="diagonal top-left"></div>
+        <div class="diagonal bottom-left"></div>
+        <div class="diagonal top-right"></div>
+        <div class="diagonal bottom-right"></div>
+        <div class="Glass"></div>
+      </div>
+    </div>
+  </body>
 </html>
