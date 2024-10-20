@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Ensures equal distribution of column width */
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    word-wrap: break-word; /* Ensures text wraps if it's too long for the column */
+    white-space: normal; /* Allows multi-line text in cells */
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+tbody tr {
+    height: auto;
+}
+
+tbody tr td {
+    vertical-align: top;
+    text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+    thead, tbody, th, td, tr {
+        display: block;
+    }
+    tr {
+        border-bottom: 1px solid #ddd;
+    }
+    thead tr {
+        display: none;
+    }
+}
